@@ -9,5 +9,7 @@ const music = MusicKit.configure({
 document.getElementById('auth').addEventListener('click', () => {
   music.authorize().then(musicUserToken => {
     console.log(`Authorized, music user token: ${musicUserToken}`)
-  })
+  }).catch(error => {
+    console.error('Authorization failed:', error);
+  });
 })
